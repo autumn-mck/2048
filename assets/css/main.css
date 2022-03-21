@@ -9,6 +9,7 @@
 	--grid-bg: #bbada0;
 	--btn-bg: #8f7a66;
 	--hr: #d8d4d0;
+	--empty-cell: #cdc1b4;
 
 	--tile-scale-mod: 7.5rem;
 }
@@ -19,7 +20,7 @@ body {
 	background: var(--bg);
 	color: var(--text-dark);
 	font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-	font-size: 18px;
+	font-size: 1.1em;
 }
 
 .container {
@@ -116,7 +117,7 @@ hr {
 	margin: auto;
 	margin-top: 40px;
 	position: relative;
-	padding: 15px;
+	padding: 0.45rem;
 	cursor: default;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -124,10 +125,11 @@ hr {
 	touch-action: none;
 	background: var(--grid-bg);
 	border-radius: 6px;
-	width: 497px;
-	height: 497px;
+	width: calc(var(--tile-scale-mod) * 4 + 0.9rem);
+	height: calc(var(--tile-scale-mod) * 4 + 0.9rem);
 	box-sizing: border-box;
 }
+
 .game-container .game-message {
 	display: none;
 	position: absolute;
@@ -181,14 +183,15 @@ hr {
 .grid-container {
 	position: absolute;
 	z-index: 1;
+	flex-direction: column;
+	display: flex;
 }
 
 .grid-row {
-	margin-bottom: 14px;
+	margin: 0.45rem;
+	flex: 1;
 }
-.grid-row:last-child {
-	margin-bottom: 0;
-}
+
 .grid-row:after {
 	content: "";
 	display: block;
@@ -196,12 +199,12 @@ hr {
 }
 
 .grid-cell {
-	width: 106.25px;
-	height: 106.25px;
-	margin-right: 14px;
+	width: 6.6rem;
+	height: 6.6rem;
+	margin-right: 0.9rem;
 	float: left;
 	border-radius: 3px;
-	background: rgba(238, 228, 218, 0.35);
+	background: var(--empty-cell);
 }
 
 .grid-cell:last-child {
@@ -211,13 +214,14 @@ hr {
 .tile-container {
 	position: absolute;
 	z-index: 2;
+	margin: 0.45rem;
 }
 
 .tile,
 .tile .tile-inner {
-	width: 107px;
-	height: 107px;
-	line-height: 107px;
+	width: 6.6rem;
+	height: 6.6rem;
+	line-height: 6.6rem;
 }
 
 .tile {
