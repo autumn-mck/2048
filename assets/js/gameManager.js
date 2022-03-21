@@ -1,11 +1,6 @@
+let manager;
+
 class GameManager {
-	/**
-	 *
-	 * @param {number} size Size of the grid
-	 * @param {*} InputManager
-	 * @param {*} Actuator
-	 * @param {*} StorageManager
-	 */
 	constructor(sizeX, sizeY) {
 		this.inputManager = new KeyboardInputManager();
 		this.storageManager = new LocalStorageManager();
@@ -22,6 +17,38 @@ class GameManager {
 		this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
 
 		this.setup();
+
+		this.tickTime = 1000;
+		manager = this;
+
+		if (this.nextTick) {
+			clearTimeout(this.nextTick);
+		}
+
+		this.nextTick = setTimeout(function () {
+			manager.tick();
+		}, this.tickTime);
+	}
+
+	tick() {
+		console.log(!this.getValue("speed-checkbox"));
+		if (this.isGameTerminated() || !this.getElem("speed-checkbox").checked) return;
+		this.prepareTiles();
+
+		if (!this.grid.cellsAvailable()) {
+			this.over = true;
+			this.actuate();
+			return;
+		}
+
+		this.addRandomTile();
+		this.actuate();
+		manager = this;
+
+		this.nextTick = setTimeout(function () {
+			manager.tick();
+		}, this.tickTime);
+		this.tickTime *= 0.998;
 	}
 
 	/**
@@ -38,6 +65,10 @@ class GameManager {
 		this.actuator = new HTMLActuator(this.size);
 
 		this.setup();
+	}
+
+	getElem(id) {
+		return document.getElementById(id);
 	}
 
 	getValue(id) {
@@ -208,6 +239,12 @@ class GameManager {
 
 		if (moved) {
 			this.addRandomTile();
+
+			manager = this;
+			clearTimeout(this.nextTick);
+			this.nextTick = setTimeout(function () {
+				manager.tick();
+			}, this.tickTime);
 
 			if (!this.movesAvailable()) {
 				this.over = true; // Game over!
