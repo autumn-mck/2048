@@ -36,7 +36,7 @@ h1.title {
 
 .scores-container {
 	float: right;
-	text-align: right;
+	margin-top: 1.5rem;
 }
 
 .score-container,
