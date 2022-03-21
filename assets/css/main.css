@@ -27,8 +27,8 @@ body {
 	flex-direction: column;
 }
 
-h1.title {
-	font-size: 80px;
+.title {
+	font-size: 5rem;
 	font-weight: bold;
 	margin: 0;
 	float: left;
@@ -36,7 +36,7 @@ h1.title {
 
 .scores-container {
 	float: right;
-	margin-top: 1.5rem;
+	margin-top: 2rem;
 }
 
 .score-container,
@@ -44,54 +44,52 @@ h1.title {
 	position: relative;
 	display: inline-block;
 	background: var(--grid-bg);
-	padding: 15px 25px;
-	font-size: 25px;
-	height: 25px;
-	line-height: 47px;
+	padding: 1rem 1.6rem;
+	font-size: 1.6rem;
+	height: 1.6rem;
+	line-height: 2.8rem;
 	font-weight: bold;
 	border-radius: 3px;
-	color: white;
-	margin-top: 8px;
+	color: var(--bg);
 	text-align: center;
 }
+
 .score-container:after,
 .best-container:after {
 	position: absolute;
 	width: 100%;
-	top: 10px;
+	top: 0.6rem;
 	left: 0;
-	text-transform: uppercase;
-	font-size: 13px;
-	line-height: 13px;
+	font-size: 0.9rem;
+	line-height: 0.8rem;
 	text-align: center;
 	color: var(--text-low-contrast);
 }
+
+.score-container:after {
+	content: "SCORE";
+}
+
+.best-container:after {
+	content: "BEST";
+}
+
 .score-container .score-addition,
 .best-container .score-addition {
 	position: absolute;
-	right: 30px;
-	color: red;
-	font-size: 25px;
-	line-height: 25px;
+	right: 1.6rem;
+	font-size: 1.6rem;
+	line-height: 1.7rem;
 	font-weight: bold;
-	color: rgba(119, 110, 101, 0.9);
+	color: var(--text-dark);
 	z-index: 100;
 	animation: move-up 600ms ease-in;
 	animation-fill-mode: both;
 }
 
-.score-container:after {
-	content: "Score";
-}
-
-.best-container:after {
-	content: "Best";
-}
-
 p {
 	margin-top: 0;
-	margin-bottom: 10px;
-	line-height: 1.65;
+	line-height: 1.5;
 }
 
 a {
@@ -105,10 +103,6 @@ a:hover {
 	text-decoration: none;
 }
 
-strong.important {
-	text-transform: uppercase;
-}
-
 hr {
 	border: none;
 	border-bottom: 1px solid var(--hr);
@@ -117,6 +111,7 @@ hr {
 }
 
 .game-container {
+	margin: auto;
 	margin-top: 40px;
 	position: relative;
 	padding: 15px;
@@ -413,7 +408,7 @@ hr {
 		font-size: 15px;
 	}
 
-	h1.title {
+	.title {
 		font-size: 2.5em;
 	}
 
