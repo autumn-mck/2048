@@ -10,6 +10,7 @@ Obviously significant credit also goes to all the contributors to the original v
 Removed IE Support (Should still support any browser released within the last 7 years)  
 Generally tidied and updated code to more modern standards  
 Added comments
+Switched fonts to WOFF2 format
 
 ## Future changes:
 
