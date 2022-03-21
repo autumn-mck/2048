@@ -11,9 +11,9 @@ class Grid {
 	empty() {
 		let cells = [];
 
-		for (let x = 0; x < this.size; x++) {
+		for (let x = 0; x < this.size.x; x++) {
 			let row = (cells[x] = []);
-			for (let y = 0; y < this.size; y++) {
+			for (let y = 0; y < this.size.y; y++) {
 				row.push(null);
 			}
 		}
@@ -28,9 +28,9 @@ class Grid {
 	fromState(state) {
 		let cells = [];
 
-		for (let x = 0; x < this.size; x++) {
+		for (let x = 0; x < this.size.x; x++) {
 			let row = (cells[x] = []);
-			for (let y = 0; y < this.size; y++) {
+			for (let y = 0; y < this.size.y; y++) {
 				let tile = state[x][y];
 
 				if (tile) row.push(new Tile(tile.position, tile.value));
@@ -72,8 +72,8 @@ class Grid {
 	 * @param {function} callback
 	 */
 	eachCell(callback) {
-		for (let x = 0; x < this.size; x++) {
-			for (let y = 0; y < this.size; y++) {
+		for (let x = 0; x < this.size.x; x++) {
+			for (let y = 0; y < this.size.y; y++) {
 				callback(x, y, this.cells[x][y]);
 			}
 		}
@@ -129,16 +129,16 @@ class Grid {
 	 * Check if the given position is within the bounds of the grid
 	 */
 	withinBounds(position) {
-		return position.x >= 0 && position.x < this.size && position.y >= 0 && position.y < this.size;
+		return position.x >= 0 && position.x < this.size.x && position.y >= 0 && position.y < this.size.y;
 	}
 
 	serialize() {
 		let cellState = [];
 
-		for (let x = 0; x < this.size; x++) {
+		for (let x = 0; x < this.size.x; x++) {
 			let row = (cellState[x] = []);
 
-			for (let y = 0; y < this.size; y++) {
+			for (let y = 0; y < this.size.y; y++) {
 				row.push(this.cells[x][y] ? this.cells[x][y].serialize() : null);
 			}
 		}
