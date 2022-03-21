@@ -6,13 +6,13 @@ class GameManager {
 	 * @param {*} Actuator
 	 * @param {*} StorageManager
 	 */
-	constructor(sizeX, sizeY, InputManager, Actuator, StorageManager) {
-		this.inputManager = new InputManager();
-		this.storageManager = new StorageManager();
+	constructor(sizeX, sizeY) {
+		this.inputManager = new KeyboardInputManager();
+		this.storageManager = new LocalStorageManager();
 		let previousState = this.storageManager.getGameState();
 		if (previousState) this.size = previousState.grid.size;
 		else this.size = { x: sizeX, y: sizeY };
-		this.actuator = new Actuator(this.size);
+		this.actuator = new HTMLActuator(this.size);
 
 		// Number of tiles to start a new game with
 		this.startTiles = 2;
@@ -30,7 +30,18 @@ class GameManager {
 	restart() {
 		this.storageManager.clearGameState();
 		this.actuator.continueGame(); // Clear the game won/lost message
+
+		let sizeX = this.getValue("grid-size-x");
+		let sizeY = this.getValue("grid-size-y");
+
+		this.size = { x: sizeX, y: sizeY };
+		this.actuator = new HTMLActuator(this.size);
+
 		this.setup();
+	}
+
+	getValue(id) {
+		return document.getElementById(id).value;
 	}
 
 	/**
