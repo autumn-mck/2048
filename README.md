@@ -9,7 +9,7 @@ Obviously significant credit also goes to all the contributors to the original v
 
 Removed IE Support (Should still support any browser released within the last 7 years)  
 Generally tidied and updated code to more modern standards  
-Added comments  
+Commented code  
 Switched fonts to WOFF2 format  
 Reduced both uncompressed page size and number of requests by over 50x compared to original version hosted at <https://play2048.co>
 
