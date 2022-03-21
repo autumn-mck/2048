@@ -1,11 +1,32 @@
 class HTMLActuator {
-	constructor() {
+	constructor(size) {
 		this.tileContainer = document.querySelector(".tile-container");
 		this.scoreContainer = document.querySelector(".score-container");
 		this.bestContainer = document.querySelector(".best-container");
 		this.messageContainer = document.querySelector(".game-message");
+		this.gridContainer = document.getElementById("grid-container");
+
+		this.setGridSize(size);
 
 		this.score = 0;
+	}
+
+	setGridSize(size) {
+		document.documentElement.style.setProperty("--tile-count-x", size.x);
+		document.documentElement.style.setProperty("--tile-count-y", size.y);
+
+		this.gridContainer.innerHTML = "";
+
+		for (let y = 0; y < size.y; y++) {
+			let row = document.createElement("div");
+			row.classList = ["grid-row"];
+			for (let x = 0; x < size.x; x++) {
+				let tile = document.createElement("div");
+				tile.classList = ["grid-cell"];
+				row.appendChild(tile);
+			}
+			this.gridContainer.appendChild(row);
+		}
 	}
 
 	actuate(grid, metadata) {
