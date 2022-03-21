@@ -501,101 +501,19 @@ hr {
 
 	.game-container {
 		margin-top: 17px;
-		position: relative;
 		padding: 10px;
-		cursor: default;
-		-webkit-touch-callout: none;
-		-webkit-user-select: none;
-		user-select: none;
-		touch-action: none;
-		background: #bbada0;
-		border-radius: 6px;
 		width: 280px;
 		height: 280px;
-		box-sizing: border-box;
-	}
-	.game-container .game-message {
-		display: none;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background: rgba(238, 228, 218, 0.5);
-		z-index: 100;
-		text-align: center;
-		animation: fade-in 800ms ease 1200ms;
-		animation-fill-mode: both;
-	}
-	.game-container .game-message p {
-		font-size: 60px;
-		font-weight: bold;
-		height: 60px;
-		line-height: 60px;
-		margin-top: 222px;
-	}
-	.game-container .game-message .lower {
-		display: block;
-		margin-top: 59px;
-	}
-	.game-container .game-message a {
-		display: inline-block;
-		background: #8f7a66;
-		border-radius: 3px;
-		padding: 0 20px;
-		text-decoration: none;
-		color: #f9f6f2;
-		height: 40px;
-		line-height: 42px;
-		margin-left: 9px;
-	}
-	.game-container .game-message a.keep-playing-button {
-		display: none;
-	}
-	.game-container .game-message.game-won {
-		background: rgba(237, 194, 46, 0.5);
-		color: #f9f6f2;
-	}
-	.game-container .game-message.game-won a.keep-playing-button {
-		display: inline-block;
-	}
-	.game-container .game-message.game-won,
-	.game-container .game-message.game-over {
-		display: block;
-	}
-
-	.grid-container {
-		position: absolute;
-		z-index: 1;
 	}
 
 	.grid-row {
 		margin-bottom: 10px;
-	}
-	.grid-row:last-child {
-		margin-bottom: 0;
-	}
-	.grid-row:after {
-		content: "";
-		display: block;
-		clear: both;
 	}
 
 	.grid-cell {
 		width: 57.5px;
 		height: 57.5px;
 		margin-right: 10px;
-		float: left;
-		border-radius: 3px;
-		background: rgba(238, 228, 218, 0.35);
-	}
-	.grid-cell:last-child {
-		margin-right: 0;
-	}
-
-	.tile-container {
-		position: absolute;
-		z-index: 2;
 	}
 
 	.tile,
