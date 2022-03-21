@@ -7,9 +7,11 @@ class GameManager {
 	 * @param {*} StorageManager
 	 */
 	constructor(sizeX, sizeY, InputManager, Actuator, StorageManager) {
-		this.size = { x: sizeX, y: sizeY };
 		this.inputManager = new InputManager();
 		this.storageManager = new StorageManager();
+		let previousState = this.storageManager.getGameState();
+		if (previousState) this.size = previousState.grid.size;
+		else this.size = { x: sizeX, y: sizeY };
 		this.actuator = new Actuator(this.size);
 
 		// Number of tiles to start a new game with

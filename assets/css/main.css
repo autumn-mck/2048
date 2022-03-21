@@ -13,8 +13,10 @@
 
 	--tile-scale-mod: 7.5rem;
 
-	--tile-count-x: 10;
-	--tile-count-y: 10;
+	--tile-count-x: 4;
+	--tile-count-y: 4;
+
+	--padding-scale-mod: 0.9rem;
 }
 
 html {
@@ -124,7 +126,7 @@ hr {
 	margin: auto;
 	margin-top: 40px;
 	position: relative;
-	padding: 0.45rem;
+	padding: calc(var(--padding-scale-mod) / 2);
 	cursor: default;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -132,8 +134,8 @@ hr {
 	touch-action: none;
 	background: var(--grid-bg);
 	border-radius: 6px;
-	width: calc(var(--tile-scale-mod) * var(--tile-count-x) + 0.9rem);
-	height: calc(var(--tile-scale-mod) * var(--tile-count-y) + 0.9rem);
+	width: calc(var(--tile-scale-mod) * var(--tile-count-x) + var(--padding-scale-mod));
+	height: calc(var(--tile-scale-mod) * var(--tile-count-y) + var(--padding-scale-mod));
 	box-sizing: border-box;
 }
 
@@ -195,7 +197,7 @@ hr {
 }
 
 .grid-row {
-	margin: 0.45rem;
+	margin: calc(var(--padding-scale-mod) / 2);
 	flex: 1;
 }
 
@@ -208,7 +210,7 @@ hr {
 .grid-cell {
 	width: 6.6rem;
 	height: 6.6rem;
-	margin-right: 0.9rem;
+	margin-right: var(--padding-scale-mod);
 	float: left;
 	border-radius: 3px;
 	background: var(--empty-cell);
@@ -221,7 +223,7 @@ hr {
 .tile-container {
 	position: absolute;
 	z-index: 2;
-	margin: 0.45rem;
+	margin: calc(var(--padding-scale-mod) / 2);
 }
 
 .tile,
@@ -370,12 +372,12 @@ hr {
 
 @media (max-width: 560px) {
 	:root {
-		--tile-scale-mod: 4.5rem;
+		--tile-scale-mod: 4.225rem;
+		--padding-scale-mod: 0.6rem;
 	}
 
-	html,
-	body {
-		font-size: 15px;
+	html {
+		font-size: 100%;
 	}
 
 	.title {
@@ -386,11 +388,6 @@ hr {
 		margin-top: 0;
 	}
 
-	.container {
-		width: 280px;
-		margin: 0 auto;
-	}
-
 	.score-container,
 	.best-container {
 		margin-top: 0;
@@ -399,7 +396,7 @@ hr {
 	}
 
 	.heading {
-		margin-bottom: 10px;
+		margin-bottom: 0.6rem;
 	}
 
 	.game-intro {
@@ -419,19 +416,12 @@ hr {
 
 	.game-container {
 		margin-top: 17px;
-		padding: 10px;
-		width: 280px;
-		height: 280px;
-	}
-
-	.grid-row {
-		margin-bottom: 10px;
+		padding: 0.3rem;
 	}
 
 	.grid-cell {
-		width: 57.5px;
-		height: 57.5px;
-		margin-right: 10px;
+		width: 58px;
+		height: 58px;
 	}
 
 	.tile,
