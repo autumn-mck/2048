@@ -12,11 +12,17 @@
 	--empty-cell: #cdc1b4;
 
 	--tile-scale-mod: 7.5rem;
+
+	--tile-count-x: 10;
+	--tile-count-y: 10;
+}
+
+html {
+	font-size: 100%;
 }
 
 body {
-	margin: 20px;
-	padding: 0;
+	margin: 0;
 	background: var(--bg);
 	color: var(--text-dark);
 	font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
@@ -24,9 +30,10 @@ body {
 }
 
 .container {
-	width: 500px;
+	width: min(87%, 31rem);
 	margin: 0 auto;
 	display: flex;
+	margin-top: 1rem;
 	flex-direction: column;
 }
 
@@ -125,8 +132,8 @@ hr {
 	touch-action: none;
 	background: var(--grid-bg);
 	border-radius: 6px;
-	width: calc(var(--tile-scale-mod) * 4 + 0.9rem);
-	height: calc(var(--tile-scale-mod) * 4 + 0.9rem);
+	width: calc(var(--tile-scale-mod) * var(--tile-count-x) + 0.9rem);
+	height: calc(var(--tile-scale-mod) * var(--tile-count-y) + 0.9rem);
 	box-sizing: border-box;
 }
 
@@ -358,7 +365,7 @@ hr {
 }
 
 .game-explanation {
-	margin-top: 50px;
+	margin-top: 2rem;
 }
 
 @media (max-width: 560px) {
@@ -372,7 +379,7 @@ hr {
 	}
 
 	.title {
-		font-size: 2.5em;
+		font-size: 2.5rem;
 	}
 
 	.scores-container {
