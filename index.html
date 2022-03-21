@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>2048</title>
+
+		<link href="./style/main.css" rel="stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="heading">
+				<h1 class="title">2048</h1>
+				<div class="scores-container">
+					<div class="score-container">0</div>
+					<div class="best-container">0</div>
+				</div>
+			</div>
+
+			<div class="above-game">
+				<p class="game-intro">Combine the tiles and get to <strong>2048!</strong></p>
+				<a class="restart-button" id="restart-button">New Game</a>
+			</div>
+
+			<div class="game-container" id="game-container">
+				<div class="game-message">
+					<p></p>
+					<div class="lower">
+						<a class="keep-playing-button" id="keep-playing-button">Keep going</a>
+						<a class="retry-button" id="retry-button">Try again</a>
+					</div>
+				</div>
+
+				<div class="grid-container">
+					<div class="grid-row">
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+					</div>
+					<div class="grid-row">
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+					</div>
+					<div class="grid-row">
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+					</div>
+					<div class="grid-row">
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+						<div class="grid-cell"></div>
+					</div>
+				</div>
+
+				<div class="tile-container"></div>
+			</div>
+
+			<p class="game-explanation">
+				<strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the
+				same number touch, they <strong>merge into one</strong>. Keep going until you reach <strong>2048</strong>!
+			</p>
+			<hr />
+			<p>
+				Created by <a href="https://mck.is" target="_blank">James</a>. Based on
+				<a href="https://github.com/gabrielecirulli/2048" target="_blank">the original 2048</a>, which itself was based on many other
+				things, and taking further insparation from 3x3 versions of 2048.
+			</p>
+		</div>
+
+		<!-- Load all the javascript -->
+		<script src="./assets/js/inputManager.js"></script>
+		<script src="./assets/js/htmlActuator.js"></script>
+		<script src="./assets/js/grid.js"></script>
+		<script src="./assets/js/tile.js"></script>
+		<script src="./assets/js/localStorageManager.js"></script>
+		<script src="./assets/js/gameManager.js"></script>
+		<script src="./assets/js/application.js"></script>
+	</body>
+</html>
