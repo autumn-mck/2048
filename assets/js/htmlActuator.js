@@ -60,10 +60,10 @@ class HTMLActuator {
 		let wrapper = document.createElement("div");
 		let inner = document.createElement("div");
 		let position = tile.previousPosition || { x: tile.x, y: tile.y };
-		let positionClass = this.positionClass(position);
+		this.positionWrapper(position, wrapper);
 
 		// We can't use classlist because it somehow glitches when replacing classes
-		let classes = ["tile", "tile-" + tile.value, positionClass];
+		let classes = ["tile", "tile-" + tile.value];
 
 		if (tile.value > 2048) classes.push("tile-super");
 
@@ -75,8 +75,8 @@ class HTMLActuator {
 		if (tile.previousPosition) {
 			// Make sure that the tile gets rendered in the previous position first
 			window.requestAnimationFrame(function () {
-				classes[2] = self.positionClass({ x: tile.x, y: tile.y });
-				self.applyClasses(wrapper, classes); // Update the position
+				self.positionWrapper(tile, wrapper);
+				//self.applyClasses(wrapper, classes); // Update the position
 			});
 		} else if (tile.mergedFrom) {
 			classes.push("tile-merged");
@@ -106,9 +106,10 @@ class HTMLActuator {
 		return { x: position.x + 1, y: position.y + 1 };
 	}
 
-	positionClass(position) {
+	positionWrapper(position, wrapper) {
 		position = this.normalizePosition(position);
-		return "tile-position-" + position.x + "-" + position.y;
+		wrapper.style.transform = `translate(calc(var(--tile-scale-mod) * ${position.x - 1}),
+        calc(var(--tile-scale-mod) * ${position.y - 1}))`;
 	}
 
 	/**
