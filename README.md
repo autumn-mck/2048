@@ -16,5 +16,6 @@ Added comments
 Allow different board sizes (And different aims based on the board size)  
 Switching to clearer vanilla CSS  
 Generally make it more flexible  
+Dark mode theme  
 Translations?  
 Anything else I can come up with!
