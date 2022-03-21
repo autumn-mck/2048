@@ -20,10 +20,15 @@ body {
 	font-size: 18px;
 }
 
-.heading:after {
-	content: "";
+.container {
+	width: 500px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.heading {
 	display: block;
-	clear: both;
 }
 
 h1.title {
@@ -114,11 +119,6 @@ hr {
 	border-bottom: 1px solid var(--hr);
 	margin-top: 20px;
 	margin-bottom: 30px;
-}
-
-.container {
-	width: 500px;
-	margin: 0 auto;
 }
 
 .game-container {
@@ -387,12 +387,6 @@ hr {
 	z-index: 20;
 	animation: pop 200ms ease 100ms;
 	animation-fill-mode: backwards;
-}
-
-.above-game:after {
-	content: "";
-	display: block;
-	clear: both;
 }
 
 .game-intro {
