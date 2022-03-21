@@ -76,6 +76,7 @@ class KeyboardInputManager {
 		// Respond to button presses
 		this.bindButtonPress("retry-button", this.restart);
 		this.bindButtonPress("restart-button", this.restart);
+		this.bindButtonPress("restart-button-2", this.restart);
 		this.bindButtonPress("keep-playing-button", this.keepPlaying);
 
 		// Respond to swipe events

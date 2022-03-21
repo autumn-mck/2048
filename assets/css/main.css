@@ -366,6 +366,10 @@ hr {
 	float: right;
 }
 
+.restart-button-2 {
+	float: left;
+}
+
 .game-explanation {
 	margin-top: 2rem;
 }
