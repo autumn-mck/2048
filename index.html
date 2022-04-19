@@ -6,6 +6,7 @@
 
 		<link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
 		<link href="./assets/css/clear-sans.css" rel="stylesheet" type="text/css" />
+		<link id="themeStyling" rel="stylesheet" />
 		<link rel="shortcut icon" href="./favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
@@ -51,19 +52,20 @@
 						<br />
 						<label for="speed-checkbox">Speed 2048</label>
 						<input type="checkbox" name="speed-checkbox" id="speed-checkbox" />
+						<br />
+						<label for="theme">Theme: </label>
+						<select name="theme" id="theme">
+							<option value="standard">Standard 2048</option>
+							<option value="catppuccin-night" selected>Catppuccin Night</option>
+						</select>
 					</p>
 					<a class="restart-button restart-button-2" id="restart-button-2">New Game</a><br />
 					<hr />
 				</details>
-				<p class="game-explanation">
-					<strong>HOW TO PLAY:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number
-					touch, they <strong>merge into one</strong>. Keep going until you reach <strong>2048</strong>!
-				</p>
+				<p class="game-explanation"><strong>HOW TO PLAY:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one</strong>. Keep going until you reach <strong>2048</strong>!</p>
 				<hr />
 				<p>
-					Created by <a href="https://mck.is/" target="_blank">James</a>. Based on
-					<a href="https://github.com/gabrielecirulli/2048" target="_blank">the original 2048</a>, which was based on several other
-					games. Created because I got annoyed at some bad CSS on a 3x3 version. <br />
+					Created by <a href="https://mck.is/" target="_blank">James</a>. Based on <a href="https://github.com/gabrielecirulli/2048" target="_blank">the original 2048</a>, which was based on several other games. Created because I got annoyed at some bad CSS on a 3x3 version. <br />
 					Code available on <a href="https://github.com/james-mck/2048">GitHub</a>.
 				</p>
 			</div>
