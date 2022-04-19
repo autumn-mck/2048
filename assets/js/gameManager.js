@@ -32,23 +32,26 @@ class GameManager {
 
 	tick() {
 		console.log(!this.getValue("speed-checkbox"));
-		if (this.isGameTerminated() || !this.getElem("speed-checkbox").checked) return;
-		this.prepareTiles();
+		if (this.isGameTerminated()) return;
+		if (this.getElem("speed-checkbox").checked) {
+			this.prepareTiles();
 
-		if (!this.grid.cellsAvailable()) {
-			this.over = true;
+			if (!this.grid.cellsAvailable()) {
+				this.over = true;
+				this.actuate();
+				return;
+			}
+
+			this.addRandomTile();
 			this.actuate();
-			return;
+			this.tickTime *= 0.998;
 		}
 
-		this.addRandomTile();
-		this.actuate();
 		manager = this;
 
 		this.nextTick = setTimeout(function () {
 			manager.tick();
 		}, this.tickTime);
-		this.tickTime *= 0.998;
 	}
 
 	/**
