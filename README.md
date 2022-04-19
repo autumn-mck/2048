@@ -14,7 +14,7 @@ Obviously significant credit also goes to all the contributors to the original v
 - [x] Switching to clearer vanilla CSS (In progress)
 - [x] Removed IE Support (Should still support any browser released within the last 7 years)
 - [x] Reduced both uncompressed page size and number of requests by over 50x compared to original version hosted at <https://play2048.co>
-- [x] Dark mode theme
+- [x] Dark mode theme (Note: Still not fully complete, but 90% of the way there)
 - [ ] Generally make it more flexible
 - [ ] Translations?
 - [ ] Anything else I can come up with!
