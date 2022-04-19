@@ -31,11 +31,11 @@
 
 	/* Has to be done this way with seperate for now, see https://stackoverflow.com/a/71098929 (relative colour syntax)
     for future when browsers begin to support it */
-	--tile128shadow: rgba(243, 215, 116, 0.2381);
-	--tile256shadow: rgba(243, 215, 116, 0.31746);
-	--tile512shadow: rgba(243, 215, 116, 0.39683);
-	--tile1024shadow: rgba(243, 215, 116, 0.47619);
-	--tile2048shadow: rgba(243, 215, 116, 0.55556);
+	--tile128shadow: rgba(250, 227, 176, 0.2381);
+	--tile256shadow: rgba(171, 233, 179, 0.31746);
+	--tile512shadow: rgba(181, 232, 224, 0.39683);
+	--tile1024shadow: rgba(150, 205, 251, 0.47619);
+	--tile2048shadow: rgba(137, 220, 235, 0.55556);
 
 	--padding-scale-mod: 0.9rem;
 }
