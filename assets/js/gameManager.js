@@ -16,7 +16,10 @@ class GameManager {
 		this.inputManager.on("restart", this.restart.bind(this));
 		this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
 
-		this.setup();
+		this.setupBoard();
+
+		this.loadSavedTheme();
+		this.getElem("theme").onchange = this.themeChanged;
 
 		this.tickTime = 1000;
 		manager = this;
@@ -30,9 +33,33 @@ class GameManager {
 		}, this.tickTime);
 	}
 
+	loadSavedTheme() {
+		let themeElement = this.getElem("theme");
+		let savedTheme = localStorage.getItem("theme");
+
+		if (!savedTheme) savedTheme = "catppuccin-night";
+		themeElement = savedTheme;
+
+		localStorage.setItem("theme", savedTheme);
+		this.applyTheme();
+	}
+
+	themeChanged() {
+		let themeElement = document.getElementById("theme");
+		localStorage.setItem("theme", themeElement.value);
+		manager.applyTheme();
+	}
+
+	applyTheme() {
+		let theme = localStorage.getItem("theme");
+		let themeStyleElement = document.getElementById("themeStyling");
+		let cssStr = `./assets/css/${theme}-theme.css`;
+		themeStyleElement.setAttribute("href", cssStr);
+	}
+
 	tick() {
-		console.log(!this.getValue("speed-checkbox"));
 		if (this.isGameTerminated()) return;
+
 		if (this.getElem("speed-checkbox").checked) {
 			this.prepareTiles();
 
@@ -67,7 +94,7 @@ class GameManager {
 		this.size = { x: sizeX, y: sizeY };
 		this.actuator = new HTMLActuator(this.size);
 
-		this.setup();
+		this.setupBoard();
 	}
 
 	getElem(id) {
@@ -96,7 +123,7 @@ class GameManager {
 	/**
 	 * Set up the game
 	 */
-	setup() {
+	setupBoard() {
 		let previousState = this.storageManager.getGameState();
 
 		// Reload the game from a previous game if present

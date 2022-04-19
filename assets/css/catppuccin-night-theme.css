@@ -1,0 +1,31 @@
+:root {
+	--bg: #1e1e2e;
+	--text-dark: #c3bac6;
+	--tile-dark: #302d41;
+	--text-low-contrast: #302d41;
+	--text-light: #302d41;
+	--grid-bg: #1a1826;
+	--score-bg: #988ba2;
+	--btn-bg: #c9cbff;
+	--hr: #6e6c7e;
+	--empty-cell: #302d41;
+
+	--tile2: #f2cdcd;
+	--tile4: #ddb6f2;
+	--tile8: #f5c2e7;
+	--tile16: #e8a2af;
+	--tile32: #f28fad;
+	--tile64: #f8bd96;
+	--tile128: #fae3b0;
+	--tile256: #abe9b3;
+	--tile512: #b5e8e0;
+	--tile1024: #96cdfb;
+	--tile2048: #89dceb;
+	--tile-super: #c9cbff;
+
+	--tile128shadow: rgba(250, 227, 176, 0.2381);
+	--tile256shadow: rgba(171, 233, 179, 0.31746);
+	--tile512shadow: rgba(181, 232, 224, 0.39683);
+	--tile1024shadow: rgba(150, 205, 251, 0.47619);
+	--tile2048shadow: rgba(137, 220, 235, 0.55556);
+}
