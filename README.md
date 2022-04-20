@@ -1,5 +1,7 @@
 # 2048
 
+![Screenshot showing custom board sizes and themeing](./assets/images/screenshot.png)
+
 A modified and updated version of [2048](https://github.com/gabrielecirulli/2048), with some ideas for future improvements.  
 [Play it here!](https://mck.is/2048)
 
