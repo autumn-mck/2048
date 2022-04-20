@@ -37,6 +37,9 @@
 	--tile1024shadow: rgba(150, 205, 251, 0.47619);
 	--tile2048shadow: rgba(137, 220, 235, 0.55556);
 
+	--won-bg: rgba(237, 194, 46, 0.5);
+	--lost-bg: rgba(238, 228, 218, 0.5);
+
 	--padding-scale-mod: 0.9rem;
 }
 
@@ -167,7 +170,7 @@ hr {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba(238, 228, 218, 0.5);
+	background: var(--lost-bg);
 	z-index: 100;
 	text-align: center;
 	animation: fade-in 800ms ease 1200ms;
@@ -199,7 +202,7 @@ hr {
 	display: none;
 }
 .game-container .game-message.game-won {
-	background: rgba(237, 194, 46, 0.5);
+	background: var(--won-bg);
 	color: var(--text-light);
 }
 .game-container .game-message.game-won a.keep-playing-button {
