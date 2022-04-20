@@ -37,8 +37,8 @@
 	--tile1024shadow: rgba(150, 205, 251, 0.47619);
 	--tile2048shadow: rgba(137, 220, 235, 0.55556);
 
-	--won-bg: rgba(237, 194, 46, 0.5);
-	--lost-bg: rgba(238, 228, 218, 0.5);
+	--won-bg: rgba(250, 227, 176, 0.5);
+	--lost-bg: rgba(22, 19, 32, 0.5);
 
 	--padding-scale-mod: 0.9rem;
 }
